@@ -36,9 +36,10 @@ void loop() {
     incomingData = Serial.readStringUntil('\n');
     int commaIndex = incomingData.indexOf(',');
 
-    joystick_x = incomingData.substring(0, commaIndex).toInt();
-    joystick_y = incomingData.substring(commaIndex+1).toInt();
+    joystick_y = incomingData.substring(0, commaIndex).toInt();
+    joystick_x = incomingData.substring(commaIndex+1).toInt() * -1;
 
+    // Enable the following lines for debugging
 //    Serial.println(incomingData);
 //    Serial.print("X: ");
 //    Serial.print(joystick_x);
